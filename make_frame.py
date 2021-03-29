@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 from moviepy.editor import VideoClip
 from moviepy.video.io.bindings import mplfig_to_npimage
 
-from tools import
-
+from tools import *
+from gramian_angular_field import *
+# GIF
 # Jupyter
-%matplotlib inline
+#%matplotlib inline
 
 # Option to write gif
 write_gif = False
@@ -40,7 +41,8 @@ def make_frame(time):
 
     # Data
     t, time_serie = create_time_serie(45, 0)
-    gaf, phi, r, scaled_time_serie = gramian_angular_field(time_serie)
+    gaf_obj = gramian_angular_field(time_serie)
+    gaf, phi, r, scaled_time_serie = gaf_obj.transform()
 
     # Set to 0 unkown data at time stamp iteration
     #t[iteration:] = 0

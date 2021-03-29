@@ -16,4 +16,4 @@ def create_time_serie(size, time):
     # Generating time-series
     support = np.arange(0, size)
     serie = np.cos(support + float(time))
-    return(t, serie)
+    return(support, serie)
